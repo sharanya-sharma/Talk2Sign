@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk2Sign</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<style>
+    /* Common Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+        background: linear-gradient(135deg, #4D96FF, #b1cb6b);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+
+    /* Heading */
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Button Container */
+    .button-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Button Styling */
+    .button-container button {
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background-color: white;
+        color: #4D96FF;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .button-container button:hover {
+        background-color: #4D96FF;
+        color: white;
+    }
+</style>
+<body>
+    <h1>Welcome to Talk2Sign</h1>
+
+    <div class="button-container">
+        <a href="/login"><button>User Login</button></a>
+        <a href="/signup"><button>User Signup</button></a>
+    </div>
+</body>
+</html>

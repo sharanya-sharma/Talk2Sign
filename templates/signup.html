@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup - Talk2Sign</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #9dcb6b, #4D96FF);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .login-container h2 {
+        margin-bottom: 24px;
+        color: #333;
+    }
+
+    form input {
+        width: 100%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: border-color 0.3s ease;
+    }
+
+    form input:focus {
+        border-color: #4D96FF;
+        outline: none;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #4D96FF;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #3572CC;
+    }
+
+    p {
+        margin-top: 16px;
+        font-size: 14px;
+    }
+
+    p a {
+        color: #4D96FF;
+        text-decoration: none;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+    }
+</style>
+<body>
+
+    <div class="login-container">
+        <h2>User Signup</h2>
+        <form method="POST">
+            <input name="username" placeholder="Username" required><br>
+            <input name="email" type="email" placeholder="Email" required><br>
+            <input name="password" type="password" placeholder="Password" required><br>
+            <button type="submit">Sign Up</button>
+            <p>Already registered? <a href="/login">Login here</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

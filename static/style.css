@@ -1,0 +1,140 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #F2EFE7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #9ACBD0;
+    padding: 0.8em;  /* Reduced vertical padding */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+h1 {
+    margin: 0 0 0.5em 0;  /* Reduced margin below the header */
+    text-align: center;
+    color: #123458;
+}
+
+.button-bar {
+    text-align: center;
+    margin-bottom: 1em;  /* Keep it the same for button spacing */
+}
+
+.button-bar button {
+    margin: 0.2em;  /* Reduced margin */
+    padding: 8px 14px;  /* Slightly reduced padding */
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    background: #006A71;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button-bar button:hover {
+    background: #48A6A7;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;  /* Keeping the layout the same */
+    align-items: flex-start;
+    padding: 1.5em;  /* Reduced vertical padding */
+    gap: 1.5em;  /* Reduced gap */
+    flex-wrap: wrap;
+}
+
+#transcript {
+    flex: 1;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 270px;
+    font-size: 1.1em;
+    word-wrap: break-word;
+    margin-left: 100px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.transcript-word {
+    background-color: #d3f8e2;
+    margin: 2px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.transcript-letter {
+    background-color: #fdd365;
+    margin: 2px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.transcript-stopword {
+    background-color: #eeeeee;
+    color: #777;
+    margin: 2px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#video-container {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    margin-right: 100px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#finalVideo {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+    display: none;
+}
+
+#status {
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: 1.1em;
+    color: #123458;
+}
+
+#downloadLink {
+    display: none;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#manualText {
+    width: 80%;
+    margin: 1em auto 0 auto;
+    display: block;
+    border-radius: 8px;
+    padding: 0.6em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    resize: vertical;
+}

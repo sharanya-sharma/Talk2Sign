@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎙 Talk2Sign: Audio to Sign Language</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+
+        .top-bar span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background-color: #4a7d92;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #280845;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <span>Welcome, {{ username }}!</span>
+            <button class="logout-btn" onclick="window.location.href='/logout'">Logout</button>
+        </div>
+        <h1>🎤 Talk2Sign: Audio to Sign Language</h1>
+        <div class="button-bar">
+            <button onclick="startRecognition()">Start Voice Recognition</button>
+            <button onclick="stopRecognition()">Stop</button>
+            <button onclick="resetTranscript()">Reset</button>
+            <button onclick="downloadTranscript()">Download Transcript</button>
+            <button onclick="downloadMergedVideo()">⬇ Download Merged Video</button><br>
+            <textarea id="manualText" placeholder="Type here if not using voice..." rows="3"></textarea><br>
+            <button onclick="convertTextToSign()">Convert to Sign Language</button>
+        </div>
+        <p id="status">Press "Start Voice Recognition" and speak...</p>
+    </header>
+
+    <div class="main-content">
+        <div id="transcript"></div>
+        <div id="video-container">
+            <video id="video1" autoplay muted playsinline></video>
+            <video id="video2" autoplay muted playsinline style="opacity: 0;"></video>
+            <video id="finalVideo" controls></video>
+        </div>
+    </div>
+
+    <a id="downloadLink" href="#" download></a>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
