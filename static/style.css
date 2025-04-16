@@ -7,7 +7,7 @@ body {
 
 header {
     background: #9ACBD0;
-    padding: 0.8em;  /* Reduced vertical padding */
+    padding: 0.8em;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -15,19 +15,19 @@ header {
 }
 
 h1 {
-    margin: 0 0 0.5em 0;  /* Reduced margin below the header */
+    margin: 0 0 0.5em 0;
     text-align: center;
     color: #123458;
 }
 
 .button-bar {
     text-align: center;
-    margin-bottom: 1em;  /* Keep it the same for button spacing */
+    margin-bottom: 1em;
 }
 
 .button-bar button {
-    margin: 0.2em;  /* Reduced margin */
-    padding: 8px 14px;  /* Slightly reduced padding */
+    margin: 0.2em;
+    padding: 8px 14px;
     font-size: 1em;
     border: none;
     border-radius: 6px;
@@ -43,10 +43,10 @@ h1 {
 
 .main-content {
     display: flex;
-    justify-content: space-between;  /* Keeping the layout the same */
+    justify-content: space-between;
     align-items: flex-start;
-    padding: 1.5em;  /* Reduced vertical padding */
-    gap: 1.5em;  /* Reduced gap */
+    padding: 1.5em;
+    gap: 1.5em;
     flex-wrap: wrap;
 }
 
@@ -56,12 +56,11 @@ h1 {
     background: #ffffff;
     padding: 1em;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     min-height: 270px;
     font-size: 1.1em;
     word-wrap: break-word;
     margin-left: 100px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .transcript-word {
@@ -94,6 +93,7 @@ h1 {
     max-width: 600px;
     position: relative;
     margin-right: 100px;
+    min-height: 200px; /* Important: ensures container is visible */
 }
 
 video {
@@ -137,4 +137,58 @@ video {
     font-size: 1em;
     border: 1px solid #ccc;
     resize: vertical;
+}
+
+/* ---------------- Responsive Design ---------------- */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        gap: 0.5em;
+    }
+
+    #transcript,
+    #video-container {
+        max-width: 100%;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+
+    #transcript {
+        min-height: 180px;
+        font-size: 1em;
+        padding: 0.8em;
+    }
+
+    #video-container {
+        position: relative;
+        min-height: auto;
+        width: 100%;
+    }
+
+    video {
+        position: static;
+        margin-top: 1em;
+    }
+
+    .button-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4em;
+        padding: 0 0.5em;
+    }
+
+    .button-bar button {
+        padding: 6px 10px;
+        font-size: 0.9em;
+        margin: 0.2em;
+        width: auto;
+        flex-shrink: 1;
+    }
+
+    #manualText {
+        width: 90%;
+    }
 }
