@@ -133,7 +133,7 @@ async function displaySignLanguageVideos(text) {
             }
         }
 
-        // ✅ Add space after each word or letter group
+        // Add space after each word or letter group
         const space = document.createElement('span');
         space.innerHTML = '&nbsp;';
         space.style.marginRight = '6px';
@@ -240,7 +240,7 @@ function resetTranscript() {
     link.href = '#';
     link.style.display = 'none';
 
-    // ✅ Reset recognition so it can be reinitialized properly
+    //  Reset recognition so it can be reinitialized properly
     recognition = null;
 
     // Reset status message
