@@ -84,4 +84,8 @@ def merge_videos():
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
+<<<<<<< HEAD
     app.run(host="0.0.0.0", port=port)
+=======
+    app.run(host="0.0.0.0", port=port)
+>>>>>>> 505cd73adab736cfdb1e648985e2c955780f704a
